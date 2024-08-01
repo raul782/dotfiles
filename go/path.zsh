@@ -1,2 +1,2 @@
-export GOPATH=$PROJECTS/go
-export PATH="$GOPATH/bin:$PATH"
+export GOPATH=$HOME/go/movies
+#export PATH="$GOPATH/bin:$PATH"

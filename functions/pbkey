@@ -1,0 +1,4 @@
+pbkey() {
+  # Pipe my public key to my clipboard.
+  alias pbkey="more ~/.ssh/$1.pub | pbcopy | echo '=> $1 Public key copied to pasteboard.'"
+}

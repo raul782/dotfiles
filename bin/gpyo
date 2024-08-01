@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# Git push to origin from current branch 
+
+branch=$(git rev-parse --abbrev-ref HEAD)
+git push origin $branch

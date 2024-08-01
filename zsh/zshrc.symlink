@@ -1,8 +1,8 @@
-# shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
+# shortcut to this dotfiles path is $DOTFILES
+export DOTFILES=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/Code
+export PROJECTS=~/var/www/
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
@@ -14,7 +14,7 @@ fi
 
 # all of our zsh files
 typeset -U config_files
-config_files=($ZSH/**/*.zsh)
+config_files=($DOTFILES/**/*.zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
@@ -39,3 +39,26 @@ do
 done
 
 unset config_files
+# force removal of right prompt
+export RPROMPT=''
+
+# added by travis gem
+[ -f /Users/raul/.travis/travis.sh ] && source /Users/raul/.travis/travis.sh
+export HOMEBREW_GITHUB_API_TOKEN=$GITHUB_TOKEN
+export PATH="/opt/homebrew/opt/mysql-client/bin:$HOME/flutter/bin:/usr/local/opt/curl/bin:/opt/homebrew/bin:$PATH:$HOME/.pyenv/shims"
+export PKG_CONFIG_PATH="/usr/local/opt/imagemagick@6/lib/pkgconfig"
+ulimit -n 10000
+
+# [ -f "/Users/raul/.ghcup/env" ] && source "/Users/raul/.ghcup/env" # ghcup-env
+
+# if [ -e /Users/raul/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/raul/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# export SDKMAN_DIR="$HOME/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/raul/Developer/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/raul/Developer/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/raul/Developer/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/raul/Developer/google-cloud-sdk/completion.zsh.inc'; fi
