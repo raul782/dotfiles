@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/raul/.zsh/completions:"* ]]; then export FPATH="/Users/raul/.zsh/completions:$FPATH"; fi
 # hortcut to this dotfiles path is $DOTFILES
 export DOTFILES=$HOME/dotfiles
 
@@ -46,14 +48,6 @@ export RPROMPT=''
 export HOMEBREW_GITHUB_API_TOKEN=$GITHUB_TOKEN
 export PATH="/opt/homebrew/opt/mysql-client/bin:$HOME/flutter/bin:/usr/local/opt/curl/bin:/opt/homebrew/bin:$PATH:$HOME/.pyenv/shims"
 ulimit -n 10000
-
-# [ -f "/Users/raul/.ghcup/env" ] && source "/Users/raul/.ghcup/env" # ghcup-env
-
-# if [ -e /Users/raul/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/raul/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-# export SDKMAN_DIR="$HOME/.sdkman"
-# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # The next line updates PATH for the Google Cloud SDK.
 # if [ -f '/Users/raul/Developer/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/raul/Developer/google-cloud-sdk/path.zsh.inc'; fi
