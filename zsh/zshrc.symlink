@@ -42,7 +42,7 @@ done
 
 unset config_files
 # force removal of right prompt
-export RPROMPT=''
+# export RPROMPT=''
 
 # added by travis gem
 export HOMEBREW_GITHUB_API_TOKEN=$GITHUB_TOKEN

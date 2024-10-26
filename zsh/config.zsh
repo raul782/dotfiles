@@ -50,3 +50,8 @@ bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+# NEW Re-bound - cat
+bindkey '^[[1;3D' backward-word
+bindkey '^[[1;3C' forward-word
+bindkey '^[[1;9D' beginning-of-line
+bindkey '^[[1;9C' end-of-line
